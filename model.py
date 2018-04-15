@@ -1,6 +1,8 @@
 import numpy as np
 import time
-from tensorflow.examples.tutorials.mnist import input_data
+import matplotlib.pyplot as plt
+import data_preprocessing as dp
+import os
 
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Flatten, Reshape
@@ -8,10 +10,6 @@ from keras.layers import Conv2D, Conv2DTranspose, UpSampling2D
 from keras.layers import LeakyReLU, Dropout
 from keras.layers import BatchNormalization
 from keras.optimizers import Adam, RMSprop
-
-import matplotlib.pyplot as plt
-
-import data_preprocessing as dp
 
 class ElapsedTimer(object):
     def __init__(self):
@@ -170,12 +168,14 @@ class CELEB_DCGAN(object):
                         noise=noise_input, step=(i+1))
 
     def plot_images(self, save2file=False, fake=True, samples=16, noise=None, step=5):
-        filename = 'celeba_gans.png'
+        if not os.path.exists('/res/'):
+            os.makedirs('/res/')
+        filename = '/res/celeba_gans.png'
         if fake:
             if noise is None:
                 noise = np.random.uniform(-1.0, 1.0, size=[samples, 100])
             else:
-                filename = "celeba_gans_%d.png" % step
+                filename = "/res/celeba_gans_%d.png" % step
             images = self.generator.predict(noise)
         else:
             i = np.random.randint(0, self.x_train.shape[0], samples)
