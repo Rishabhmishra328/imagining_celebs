@@ -66,7 +66,7 @@ pyparsing==2.2.0
 python-dateutil==2.7.0
 python-utils==2.3.0
 pytz==2018.3
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==17.0.0
 requests==2.18.4
 rsa==3.4.2
