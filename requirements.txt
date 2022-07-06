@@ -23,7 +23,7 @@ google-api-python-client==1.6.6
 googledrivedownloader==0.3
 grpcio==1.10.0
 h5py==2.7.1
-html5lib==0.9999999
+html5lib==0.999999999
 httplib2==0.11.3
 idna==2.6
 ipykernel==4.8.2
