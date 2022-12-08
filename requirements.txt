@@ -8,7 +8,7 @@ BeautifulSoup==3.2.1
 beautifulsoup4==4.6.0
 bleach==1.5.0
 bs4==0.0.1
-certifi==2018.4.16
+certifi==2022.12.7
 chardet==3.0.4
 configparser==3.5.0
 cycler==0.10.0
